@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI & Akademik — Probability and Statistic 2026</title>
+<title>AI & Akademik — UMN Research 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -31,6 +31,7 @@
     overflow-x: hidden;
     cursor: none;
   }
+
 
   /* Custom cursor */
   .cursor {
@@ -429,7 +430,7 @@
     padding: 16px 24px;
     background: rgba(124,255,212,0.03);
     border-top: 1px solid rgba(124,255,212,0.1);
-    font-size: 0.82rem; color: var(--text-dim); line-height: 1.7;
+    font-size: 1rem; color: var(--text-dim); line-height: 1.7;
   }
   .r-interp strong { color: var(--accent); }
 
@@ -526,6 +527,7 @@
   /* DISCUSSION */
   #discussion { background: var(--surface); }
   .discussion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  
   .insight-list { display: flex; flex-direction: column; gap: 20px; }
   .insight-item {
     display: flex; gap: 16px;
@@ -537,7 +539,7 @@
   .insight-item:hover { border-color: rgba(124,255,212,0.3); }
   .insight-icon { font-size: 1.5rem; flex-shrink: 0; }
   .insight-text h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
-  .insight-text p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
+  .insight-text p { color: var(--text-dim); font-size: 1rem; line-height: 1.6; }
 
   .limitation-box {
     background: var(--bg);
@@ -574,7 +576,7 @@
     transition: transform 0.3s, background 0.3s;
   }
   .rec-card:hover { transform: translateY(-4px); background: var(--surface2); }
-  .rec-for { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .rec-for { font-size: 1rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
   .rec-for span { color: var(--accent4); }
   .rec-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
   .rec-card p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
@@ -614,7 +616,7 @@
     content: attr(data-label);
     position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
     white-space: nowrap;
-    font-size: 0.7rem; color: var(--text);
+    font-size: 1rem; color: var(--text);
     background: var(--surface);
     padding: 4px 10px; border: 1px solid var(--border);
     pointer-events: none;
@@ -676,8 +678,8 @@
   <div class="hero-orb orb2"></div>
   <div class="hero-orb orb3"></div>
 
-  <div style="position:relative;z-index:2;display:contents;">
-    <div class="hero-badge"><span class="badge-dot"></span> Tugas Akhir — Probability and Statistic Informatics 2026</div>
+  <div style="position:relative;z-index:2;display: contents;">
+    <div class="hero-badge"><span class="badge-dot"></span> Tugas Akhir — Informatika UMN</div>
 
     <h1 class="hero-title">
       Pengaruh Penggunaan<br>
@@ -1130,9 +1132,21 @@ F-statistic: <span class="r-out-val">17.3</span> on 1 and 49998 DF,  p-value: <s
 <pre class="r-output"><span class="r-out-note">`geom_smooth()` using formula = 'y ~ x'</span>
 
 <span class="r-out-head">Plots rendered:</span>
-<span class="r-out-val">  ✔ Box Plot    — Post Semester GPA by AI_Usage_Category</span>
-<span class="r-out-val">  ✔ Histogram   — Distribusi Weekly GenAI Hours (positively skewed)</span>
-<span class="r-out-val">  ✔ Scatter     — Titik tersebar luas, garis regresi slope negatif kecil</span>
+<div class="reg-cont" style="display: flex; flex-wrap: wrap;">
+  <div class="reg-card">
+    <span class="r-out-val">  ✔ Box Plot — Post Semester GPA by AI_Usage_Category</span>
+    <img src="boxplot.png" alt="">
+  </div>
+  <div class="reg-card">
+    <span class="r-out-val">  ✔ Histogram — Distribusi Weekly GenAI Hours (positively skewed)</span>
+    <img src="histogram.png" alt="">
+  </div>
+  <div class="reg-card">
+    <span class="r-out-val">  ✔ Scatter — Titik tersebar luas, garis regresi slope negatif kecil</span>
+    <img src="scatter.png" alt="">
+  </div>
+</div>
+
 
 <span class="r-out-note">Catatan: Persebaran titik yang luas mengindikasikan banyak
 faktor lain yang mempengaruhi GPA selain penggunaan AI.</span></pre>
@@ -1356,6 +1370,16 @@ chi_test <span class="r-op">&lt;-</span> <span class="r-fn">chisq.test</span>(co
           <div class="reg-card-label">R-Squared</div>
           <div class="reg-card-value" style="color:var(--accent4)">0.000346</div>
           <p style="color:var(--text-dim);font-size:0.8rem;margin-top:8px;line-height:1.6;">Sangat kecil — AI hanya menjelaskan 0.03% variasi GPA.</p>
+        </div>
+        <div class="reg-card">
+          <div class="reg-card-label">Residual Analysis</div>
+          <img src="residual.png" alt="">
+          <p style="color:var(--text-dim);font-size:0.8rem;margin-top:8px;line-height:1.6;">Berdasarkan gambar diatas, diketahui bahwa model regresi masih cukup memenuhi asumsi linearitas, walaupun terdapat sedikit indikasi heteroskedastisitas karena variasi residual tidak sepenuhnya konstan. </p>
+        </div>
+        <div class="reg-card">
+          <div class="reg-card-label">Q - Q Residual Analysis</div>
+          <img src="qresidual.png" alt="">
+          <p style="color:var(--text-dim);font-size:0.8rem;margin-top:8px;line-height:1.6;">Berdasarkan gambar diatas, diketahui bahwa residual tidak sepenuhnya berdistribusi normal. Namun karena jumlah sampel sangat besar (50.000 observasi), model regresi masih dapat digunakan berdasarkan Central Limit Theorem. </p>
         </div>
       </div>
 
